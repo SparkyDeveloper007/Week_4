@@ -1,0 +1,18 @@
+
+@{
+    ViewData["Title"] = "Contact Us";
+
+    string controller = ViewContext.RouteData.Values["controller"] ?.ToString() ?? "";
+
+    string action = ViewContext.RouteData.Values["action"]?.ToString() ?? "";
+}
+
+<h2>Contact Us</h2>
+<p>Here's how you can reach us below:</p>
+@foreach (var item in @Model)
+{
+    <tr>
+        <td>@item.Key</td>
+        <td>@item.Value</td>
+    </tr>
+}
